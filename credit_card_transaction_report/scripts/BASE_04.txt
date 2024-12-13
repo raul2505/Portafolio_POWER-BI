@@ -1,0 +1,14 @@
+let
+    carpeta="C:\Repositorio_Local_POWER_BI\data\",
+    archivo="CREDIT_CARD.xlsx",
+
+    ruta = carpeta & archivo,
+    
+    fuente = Excel.Workbook(File.Contents(ruta)),
+
+    data = fuente{[Item= "2023_Q4",Kind = "Sheet"]}[Data],
+
+    cabeceras = Table.PromoteHeaders(data)
+
+in
+    cabeceras

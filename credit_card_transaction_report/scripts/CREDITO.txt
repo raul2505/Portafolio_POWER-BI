@@ -1,0 +1,20 @@
+let
+    data_01 = BASE_01,
+    data_02 = BASE_02,
+    data_03 = BASE_03,
+    data_04 = BASE_04,
+
+    data_consolidada = Table.Combine({data_01,data_02,data_03,data_04}),
+     tipos = Table.TransformColumnTypes(data_consolidada,{
+                                                {"Week_Start_Date",type date},
+                                                {"Annual_Fees",type number},
+                                                {"Customer_Acq_Cost",type number},
+                                                {"Credit_Limit",type number},
+                                                {"Total_Revolving_Bal",type number},
+                                                {"Total_Trans_Amt",type number},
+                                                {"Total_Trans_Vol",type number},
+                                                {"Avg_Utilization_Ratio",type number},
+                                                {"Interest_Earned",type number}
+     })
+in
+    tipos

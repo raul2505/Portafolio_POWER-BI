@@ -1,0 +1,12 @@
+let
+    carpeta="C:\Repositorio_Local_POWER_BI\data\",
+    archivo="customer.csv",
+
+    ruta = carpeta & archivo,
+    
+    fuente = Csv.Document(File.Contents(ruta)),
+
+    cabeceras = Table.PromoteHeaders(fuente)
+
+in
+    cabeceras

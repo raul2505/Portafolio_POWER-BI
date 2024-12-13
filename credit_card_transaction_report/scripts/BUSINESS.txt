@@ -1,0 +1,9 @@
+Transacciones = SUM(CREDIT_CARD[Total_Trans_Vol])
+
+Intereses = SUM(CREDIT_CARD[Interest_Earned])
+
+Monto_Transacciones = SUM(CREDIT_CARD[Total_Trans_Amt])
+
+Cuotas_Anuales = SUM(CREDIT_CARD[Annual_Fees])
+
+Ingresos = [Cuotas_Anuales] + [Intereses]
